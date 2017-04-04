@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budapest", "Budapest\Budapest\Budapest.csproj", "{B8898DC3-AC29-49E8-86C0-1311EE428E93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budapest.Vsix", "Budapest\Budapest.Vsix\Budapest.Vsix.csproj", "{68B42E7F-11A5-44FD-A34A-F1D232E7CA40}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8898DC3-AC29-49E8-86C0-1311EE428E93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8898DC3-AC29-49E8-86C0-1311EE428E93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8898DC3-AC29-49E8-86C0-1311EE428E93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8898DC3-AC29-49E8-86C0-1311EE428E93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68B42E7F-11A5-44FD-A34A-F1D232E7CA40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68B42E7F-11A5-44FD-A34A-F1D232E7CA40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68B42E7F-11A5-44FD-A34A-F1D232E7CA40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68B42E7F-11A5-44FD-A34A-F1D232E7CA40}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

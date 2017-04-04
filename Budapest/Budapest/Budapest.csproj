@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B8898DC3-AC29-49E8-86C0-1311EE428E93}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Budapest</RootNamespace>
+    <AssemblyName>Budapest</AssemblyName>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile7</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="ControlFlow\ElseClauseWithEmptyStatement.cs" />
+    <Compile Include="ControlFlow\AsyncMethodAwaitsOnlyAtReturn.cs" />
+    <Compile Include="ControlFlow\DoStatementWithConstantFalseCondition.cs" />
+    <Compile Include="ControlFlow\BlockWithReturnThrowBreak.cs" />
+    <Compile Include="ControlFlow\SwitchWithEmptySections.cs" />
+    <Compile Include="ControlFlow\EmptyCaseClause.cs" />
+    <Compile Include="Design\InheritFromObject.cs" />
+    <Compile Include="Design\PartialClassWithOnlyOneDeclaration.cs" />
+    <Compile Include="Design\UnusedParameterInConstructor.cs" />
+    <Compile Include="Design\UnusedDeclarationInCatchClause.cs" />
+    <Compile Include="Design\UnusedParameterInStaticMethod.cs" />
+    <Compile Include="Design\SealedMethodInSealedClass.cs" />
+    <Compile Include="LINQ\SelectWithIdentitySelector.cs" />
+    <Compile Include="Operators\AwaitTaskFromResult.cs" />
+    <Compile Include="Operators\UnaryZero.cs" />
+    <Compile Include="Operators\DivideByConstantOne.cs" />
+    <Compile Include="Operators\MultiplyByConstantOne.cs" />
+    <Compile Include="Operators\ConditionalExpressionWithMatchingCases.cs" />
+    <Compile Include="ControlFlow\IfStatementWithConstantTrueCondition.cs" />
+    <Compile Include="ControlFlow\TryStatementWithEmptyStatement.cs" />
+    <Compile Include="ControlFlow\ForStatementWithConstantFalseCondition.cs" />
+    <Compile Include="ControlFlow\WhileStatementWithConstantFalseCondition.cs" />
+    <Compile Include="ControlFlow\FinallyClauseWithEmptyStatement.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="ControlFlow\CatchClauseWithConstantFalseCondition.cs" />
+    <Compile Include="ControlFlow\CatchClauseWithConstantTrueCondition.cs" />
+    <Compile Include="ControlFlow\CatchClauseWithExceptionType.cs" />
+    <Compile Include="ControlFlow\IfStatementWithConstantFalseCondition.cs" />
+    <Compile Include="LINQ\OrderByWithConstantOrdering.cs" />
+    <Compile Include="LINQ\TakeWhileWithConstantTruePredicate.cs" />
+    <Compile Include="LINQ\SkipWhileWithConstantTruePredicate.cs" />
+    <Compile Include="Operators\CoalesceToSelf.cs" />
+    <Compile Include="Operators\AddOrSubtractConstantZero.cs" />
+    <Compile Include="Operators\LogicalComparisonToSelf.cs" />
+    <Compile Include="Operators\NotNotExpression.cs" />
+    <Compile Include="Operators\CoalesceToNull.cs" />
+    <Compile Include="LINQ\WhereWithConstantTruePredicate.cs" />
+    <Compile Include="Framework\ToStringCallOnStringInstance.cs" />
+    <Compile Include="Operators\ConditionalExpressionWithTrueFalseLiterals.cs" />
+    <Compile Include="Operators\LogicalComparisonToConstant.cs" />
+    <Compile Include="Refactorings\AddNullCheckToParameter.cs" />
+    <Compile Include="Refactorings\IntroduceFromConstructorParameter.cs" />
+    <Compile Include="Syntax\ArrayCreationTypeWhenVariableTypeIsExplicitlySpecified.cs" />
+    <Compile Include="Syntax\AnonymousObjectDeclaratorsWithMatchingNames.cs" />
+    <Compile Include="Syntax\EmptyStatementInBlock.cs" />
+    <Compile Include="Syntax\LambdaExpressionWithReturnStatement.cs" />
+    <Compile Include="Syntax\EmptyObjectInitializerExpression.cs" />
+    <Compile Include="Syntax\BracesAroundSingleStatement.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Syntax\ArraySizeWhenElementsAreSpecified.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Diagnostic.nuspec">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="tools\install.ps1">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="tools\uninstall.ps1">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeAnalysis, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.CodeAnalysis.Common.1.2.2\lib\portable-net45+win8\Microsoft.CodeAnalysis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.CodeAnalysis.CSharp.1.2.2\lib\portable-net45+win8\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp.Workspaces, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.CodeAnalysis.CSharp.Workspaces.1.2.2\lib\portable-net45+win8\Microsoft.CodeAnalysis.CSharp.Workspaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Workspaces, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.CodeAnalysis.Workspaces.Common.1.2.2\lib\portable-net45+win8\Microsoft.CodeAnalysis.Workspaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.1.37.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Collections.Immutable.1.1.37\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.AttributedModel, Version=1.0.30.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Composition.1.0.30\lib\portable-net45+win8+wp8+wpa81\System.Composition.AttributedModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.Convention, Version=1.0.30.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Composition.1.0.30\lib\portable-net45+win8+wp8+wpa81\System.Composition.Convention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.Hosting, Version=1.0.30.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Composition.1.0.30\lib\portable-net45+win8+wp8+wpa81\System.Composition.Hosting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.Runtime, Version=1.0.30.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Composition.1.0.30\lib\portable-net45+win8+wp8+wpa81\System.Composition.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.TypedParts, Version=1.0.30.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Composition.1.0.30\lib\portable-net45+win8+wp8+wpa81\System.Composition.TypedParts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Interactive, Version=3.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Interactive.3.0.0\lib\netstandard1.0\System.Interactive.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Metadata, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Reflection.Metadata.1.2.0\lib\portable-net45+win8\System.Reflection.Metadata.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
+    <Analyzer Include="..\..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\v4.6\Microsoft.Portable.CSharp.targets" />
+  <Target Name="AfterBuild">
+    <GetAssemblyIdentity AssemblyFiles="$(OutDir)\$(AssemblyName).dll">
+      <Output TaskParameter="Assemblies" ItemName="AnalyzerAssemblyInfo" />
+    </GetAssemblyIdentity>
+    <Exec Command="&quot;$(SolutionDir)packages\NuGet.CommandLine.2.8.5\tools\NuGet.exe&quot; pack Diagnostic.nuspec -NoPackageAnalysis -Version %(AnalyzerAssemblyInfo.Version) -OutputDirectory ." WorkingDirectory="$(OutDir)" LogStandardErrorAsError="true" ConsoleToMSBuild="true">
+      <Output TaskParameter="ConsoleOutput" PropertyName="OutputOfExec" />
+    </Exec>
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
