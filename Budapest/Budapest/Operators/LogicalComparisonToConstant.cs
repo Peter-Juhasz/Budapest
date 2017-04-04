@@ -36,7 +36,7 @@ namespace Budapest
                 right = context.SemanticModel.GetConstantValue(binary.Right, context.CancellationToken);
 
             // x == true
-            if (right.HasValue && right.Value.Equals(true))
+            if (right.Value?.Equals(true) ?? false)
             {
                 context.ReportDiagnostic(
                     Diagnostic.Create(
@@ -52,7 +52,7 @@ namespace Budapest
             }
 
             // true == x
-            else if (left.HasValue && left.Value.Equals(true))
+            else if (left.Value?.Equals(true) ?? false)
             {
                 context.ReportDiagnostic(
                     Diagnostic.Create(
@@ -77,7 +77,7 @@ namespace Budapest
                 right = context.SemanticModel.GetConstantValue(binary.Right, context.CancellationToken);
 
             // x || true
-            if (right.HasValue && right.Value.Equals(true))
+            if (right.Value?.Equals(true) ?? false)
             {
                 context.ReportDiagnostic(
                     Diagnostic.Create(
@@ -93,7 +93,7 @@ namespace Budapest
             }
 
             // true || x
-            else if (left.HasValue && left.Value.Equals(true))
+            else if (left.Value?.Equals(true) ?? false)
             {
                 context.ReportDiagnostic(
                     Diagnostic.Create(
@@ -109,7 +109,7 @@ namespace Budapest
             }
 
             // x || false
-            else if (right.HasValue && right.Value.Equals(false))
+            else if (right.Value?.Equals(false) ?? false)
             {
                 context.ReportDiagnostic(
                     Diagnostic.Create(
@@ -125,7 +125,7 @@ namespace Budapest
             }
 
             // false || x
-            else if (left.HasValue && left.Value.Equals(false))
+            else if (left.Value?.Equals(false) ?? false)
             {
                 context.ReportDiagnostic(
                     Diagnostic.Create(
@@ -150,7 +150,7 @@ namespace Budapest
                 right = context.SemanticModel.GetConstantValue(binary.Right, context.CancellationToken);
 
             // x != false
-            if (right.HasValue && right.Value.Equals(false))
+            if (right.Value?.Equals(false) ?? false)
             {
                 context.ReportDiagnostic(
                     Diagnostic.Create(
@@ -166,7 +166,7 @@ namespace Budapest
             }
 
             // false != x
-            else if (left.HasValue && left.Value.Equals(false))
+            else if (left.Value?.Equals(false) ?? false)
             {
                 context.ReportDiagnostic(
                     Diagnostic.Create(
@@ -207,7 +207,7 @@ namespace Budapest
             }
 
             // true && x
-            else if (left.HasValue && left.Value.Equals(true))
+            else if (left.Value?.Equals(true) ?? false)
             {
                 context.ReportDiagnostic(
                     Diagnostic.Create(

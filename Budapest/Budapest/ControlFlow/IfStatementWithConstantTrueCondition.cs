@@ -31,16 +31,15 @@ namespace Budapest
             IfStatementSyntax syntax = context.Node as IfStatementSyntax;
 
             var value = context.SemanticModel.GetConstantValue(syntax.Condition, context.CancellationToken);
-
             if (value.HasValue && value.Value.Equals(true))
             {
-                if (syntax.Statement.IsKind(SyntaxKind.Block))
+                if (syntax.Statement?.IsKind(SyntaxKind.Block) ?? false)
                 {
                     if (syntax.Statement.DescendantNodes().Any(c => c.IsKind(SyntaxKind.VariableDeclaration)))
                         context.MarkAsUnnecessary(Rule, syntax.IfKeyword, syntax.CloseParenToken);
                     else
                     {
-                        var block = syntax.Else.Statement as BlockSyntax;
+                        var block = syntax.Statement as BlockSyntax;
                         context.MarkAsUnnecessary(Rule, syntax.GetLocation(), block.OpenBraceToken.GetLocation());
                         context.ReportDiagnostic(Diagnostic.Create(Rule, block.CloseBraceToken.GetLocation()));
                     }
@@ -48,7 +47,7 @@ namespace Budapest
                 else
                     context.MarkAsUnnecessary(Rule, syntax.IfKeyword, syntax.CloseParenToken);
 
-                if (!syntax.Else.IsMissing)
+                if (syntax.Else != null)
                     context.ReportDiagnostic(Diagnostic.Create(Rule, syntax.Else.GetLocation()));
             }
         }
